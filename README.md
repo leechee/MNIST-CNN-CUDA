@@ -6,7 +6,7 @@ The MNIST database is a large database of handwritten digits that is commonly us
 
 ## Objective
 
-In this repository, I coded a convolutional neural network with two conv layers, two pooling layers, and an fc layer. The activation function is ReLU and CUDA implemented. I ran the model on an NVIDIA Geforce RTX 3050.
+In this repository, I coded a convolutional neural network with three conv layers, two pooling layers, and 2 fc layers (multilayer perceptron). The activation function is ReLU and CUDA is implemented. I ran the model on an NVIDIA Geforce RTX 3050.
 
 ## Getting Started
 ### Python Environment
@@ -53,4 +53,13 @@ test_dataset = datasets.MNIST(root='data', train=False, download=True, transform
 train_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 test_loader = torch.utils.data.DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False)
 ```
+
+### Results
+![[loss]](assets/loss.png)
+
+This graph demonstrates the training loss with respect to the epochs. I ran the model with 5 epochs. The training and testing accuracy are both 99% (rounded down).
+
+![[matrix]](assets/matrix.png)
+
+This is the confusion matrix for the model's results. Here we can visualize the 99% testing accuracy.
 
