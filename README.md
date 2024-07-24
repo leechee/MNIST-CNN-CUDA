@@ -59,10 +59,9 @@ test_loader = torch.utils.data.DataLoader(dataset=test_dataset, batch_size=batch
 ### Results
 ![[loss]](assets/loss.png)
 
-This graph demonstrates the training loss with respect to the epochs. 
-I ran the model with 5 epochs. The training and testing accuracy are both 99% (rounded down).
+This graph demonstrates the training loss with respect to 10 epochs. The training accuracy is 77.9%, and the testing accuracy is 77.9% as well.
 
 ![[matrix]](assets/matrix.png)
 
-This is the confusion matrix for the model's results. Here we can visualize the 99% testing accuracy.
+This is the confusion matrix for the model's results. Here we can visualize the 77.9% testing accuracy.
 
