@@ -39,6 +39,8 @@ pip3 install torch torchvision torchaudio --index-url https://download.pytorch.o
 
 You will also need to install the torchvision MNIST dataset, which will be prompted in the terminal when called upon.
 
+For CUDA: I downloaded the CUDA toolkit version 12.5 from the NVIDIA website [here](https://developer.nvidia.com/cuda-downloads). I used the network Windows 11 installation.
+
 ### Data Input
 To input data from the MNIST data set, use the Torchvision library. Below is the code that transforms and splits the data into three sets of loaders. The validiation set, training set, and testing set. The validition set provides an unbiased evaluation of the model. 
 
