@@ -43,12 +43,13 @@ class ConvNet(nn.Module):
         self.layer3 = nn.Sequential(
             nn.Conv2d(in_channels = 64, out_channels= 16, kernel_size= 5, stride = 1, padding = 2),
             nn.ReLU())
-        self.fc1 = nn.Linear(7 * 7 * 64, 32) # 10 is the output, we need 10 for the 10 digits of MNIST. 64 is the number of channels
+        self.fc1 = nn.Linear(7 * 7 * 16, 32) # 10 is the output, we need 10 for the 10 digits of MNIST. 64 is the number of channels
         self.fc2 = nn.Linear(32, 10)
 
     def forward(self, x):
         out = self.layer1(x)
         out = self.layer2(out)
+        out = self.layer3(out)
         out = out.reshape(out.size(0), -1)
         out = self.fc1(out)
         out = self.fc2(out)
