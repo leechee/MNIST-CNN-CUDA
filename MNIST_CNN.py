@@ -43,8 +43,8 @@ class ConvNet(nn.Module):
         self.layer3 = nn.Sequential(
             nn.Conv2d(in_channels = 64, out_channels= 16, kernel_size= 5, stride = 1, padding = 2),
             nn.ReLU())
-        self.fc1 = nn.Linear(7 * 7 * 16, 32) # 10 is the output, we need 10 for the 10 digits of MNIST. 64 is the number of channels
-        self.fc2 = nn.Linear(32, 10)
+        self.fc1 = nn.Linear(7 * 7 * 16, 32) # 16 is the number of channels, 7*7 is the number of pixels after pooling and convs, 32 is out channels for next layer of MLP
+        self.fc2 = nn.Linear(32, 10) # 10 is the output, we need 10 for the 10 digits of MNIST.
 
     def forward(self, x):
         out = self.layer1(x)
